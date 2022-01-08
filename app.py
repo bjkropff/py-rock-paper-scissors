@@ -22,28 +22,24 @@ scissors_check = ["Rock", "Scissors", "Paper"]
 outcomes = [rock_check, paper_check, scissors_check]
 
 
-def player_choice():
 #Player choice
+def player_choice():
   print("Please choose one:")
   print("1. Rock")
   print("2. Paper")
   print("3. Scissors")
-  player_pick = input("Choice: 1, 2, 3")
-
+  player_pick = int(input("Choice: 1, 2, 3"))
   return player_pick
+
 
 player_pick = player_choice()
 
-if player_pick not in [1, 2, 3]:
-	print("Looks like that is not a valid choice".)
-	print("1. Rock")
-  print("2. Paper")
-  print("3. Scissors")
-  player_pick = input("Please pick: 1, 2, or 3:")
-  else
-    player_choice()
-#Valid input check
-  
+
+while player_pick not in [1, 2, 3]:
+  print("Looks like that is not a valid choice.")
+  player_pick = player_choice()
+
+#Valid input check 
 
 player_choice()
 
