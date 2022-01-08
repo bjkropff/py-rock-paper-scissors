@@ -1,9 +1,7 @@
-#!/usr/bin/env python3.7.6
+#!/usr/bin/env python3
 import random
 
 print("Get ready to play Rock-Paper-Scissors")
-
-total_bill=input("What is the total of the bill?: ")
 
 #Computer choice
 comp = random.randint(0, 2)
@@ -21,68 +19,84 @@ scissors_check = ["Rock", "Scissors", "Paper"]
 #outcomes[2] compares scissors to player input
 outcomes = [rock_check, paper_check, scissors_check]
 
+compare_list = outcomes[comp]
 
 #Player choice
 def player_choice():
-  print("Please choose one:")
-  print("1. Rock")
-  print("2. Paper")
-  print("3. Scissors")
-  player_pick = int(input("Choice: 1, 2, 3"))
-  return player_pick
+  print("Please choose one: Rock; Paper; Scissors")
+  pick = input("Pick: ")
+  
+  #Valid input check 
+  while pick not in compare_list:
+    print("Looks like that is not a valid choice.")
+    pick = player_choice()
 
+  return pick
 
 player_pick = player_choice()
+comp_pick = compare_list[1]
+
+#compare_list is the list of outcomes: index 0 beats comp, index 1 is a tie,  index 2 loes 
+#player_pick is the player choice 
+
+#Find index of player choice
+# if index 0 player wins
+# if index 1 tie
+# if index 2 comp wins
+def gamedetails (player_pick, comp_pick):
+		print("You pick " + player_pick)
+		print("The computer picked " + comp_pick)
+
+if compare_list.index(player_pick) == 2 :
+		gamedetails (player_pick, comp_pick)
+		print("Computer wins")
+elif compare_list.index(player_pick) == 0  :
+		gamedetails (player_pick, comp_pick)
+		print("You win")
+elif compare_list.index(player_pick) == 1  :
+		gamedetails (player_pick, comp_pick)
+		print("It's a tie")
+else : 
+		print("Something happened; try again")
 
 
-while player_pick not in [1, 2, 3]:
-  print("Looks like that is not a valid choice.")
-  player_pick = player_choice()
-
-#Valid input check 
-
-player_choice()
-
-compare_list = outcomes[player]
-
-#Compare choice and outcome
-
-#if player is higher than comp
-#Example 1 != 2
-if player > comp 
-
-play wins
-
-if comp > play
-
-comp wins
-
-#Example 1 = 1
-else tie
-#Outcome
-
-comp = 1,2,3
-play = 0,1,2
-
-# Scissors -> Paper
-# Paper -> Rock
-# Rock -> Scissors
 
 
-# Paper -> Rock -> Scissors
-# Scissors -> Paper -> Rock
-# Rock -> Scissors -> Paper
+# index = animals.index('dog')
 
 
-def winner_check(comp):
-    match comp:
-        case "Scissors":
-            return "Bad request"
-        case "Paper":
-            return "Not found"
-        case "Rock":
-            return "I'm a teapot"
-        case _:
-            return "Something's wrong with the internet"
+# if compare_list.index(comp) == 
+
+
+# #Compare choice and outcome
+
+# #if player is higher than comp
+# #Example 1 != 2
+# if player > comp 
+
+# play wins
+
+# if comp > play
+
+# comp wins
+
+# #Example 1 = 1
+# else tie
+# #Outcome
+
+# comp = 1,2,3
+# play = 0,1,2
+
+# # Scissors -> Paper
+# # Paper -> Rock
+# # Rock -> Scissors
+
+
+# # Paper -> Rock -> Scissors
+# # Scissors -> Paper -> Rock
+# # Rock -> Scissors -> Paper
+# index = animals.index('dog')
+
+
 
 
